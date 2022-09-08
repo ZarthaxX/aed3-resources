@@ -1,0 +1,1 @@
+g++ $1/main.cpp -o main && ./main < $1/data.in > data.out
