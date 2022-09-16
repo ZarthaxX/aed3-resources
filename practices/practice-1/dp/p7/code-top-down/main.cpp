@@ -11,46 +11,56 @@
 #include <math.h>
 #include <set>
 
+#define INF 2000000000
+
+typedef long long LL;
+
 using namespace std;
 
-int INF=2000000000;
-vector<vector<int>> cache;
+vector<vector<LL>> cache;
 
-vector<int> asteroids;
+long long n;
+vector<LL> asteroids;
 
-int dp(int j, int c){
+LL dp(LL j, LL c){
 	// base case
-	if(j == 0) {
+	if(j == n) {
+		// we got to the end without asteroids
 		if(c == 0)
 			return 0;
+		// we still have at least 1 asteroid, so it's an illegal state
 		return -INF;
 	}
-	// illegal, can't go below 0 asteroids
+
+	// illegal state, can't go below 0 asteroids at any given point
 	if(c < 0)
 		return -INF;
 	
+	// check if we already computed this state
 	if(cache[j][c] != -1){
 		return cache[j][c];
 	}
 	
-	int doNone = dp(j-1,c);
-	int buyOne = dp(j-1,c-1)-asteroids[j];
-	int sellOne = dp(j-1,c+1)+asteroids[j];
+	// recursive step
+	LL doNone = dp(j+1, c);
+	LL buyOne = dp(j+1, c+1) - asteroids[j];
+	LL sellOne = dp(j+1, c-1) + asteroids[j];
 	
+	// save result in cache and return result
 	return cache[j][c] = max(doNone, max(buyOne, sellOne));
 }
 
 void solve(){
-	int n;
 	cin>>n;
-	asteroids = vector<int>(n+1);
+
+	asteroids = vector<LL>(n);
 	
 	for(int i=0;i<n;i++)
-		cin>>asteroids[i+1];
+		cin>>asteroids[i];
 	
-	cache.assign(n+1,vector<int>(n+1,-1));
+	cache.assign(n,vector<LL>(n,-1));
 
-	cout<< dp(n, 0) << endl;
+	cout<< dp(0, 0) << endl;
 }
 
 int main(int argc, char **argv) {
