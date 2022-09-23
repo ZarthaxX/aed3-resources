@@ -57,7 +57,7 @@ La complejidad final seria $O(n+m)$
 
 ## Inciso D
 Probamos las implicaciones para ambos lados.
-### $\implies$ 
+### $\implies$) 
 Tomamos un digrafo $D$ no trivial, porque si es trivial vale trivialmente la propiedad.
 En este caso como $n > 1$ no puede ser el grafo trivial, asi que vamos a probar que D tiene un vértice con
 $d_{out}(v) = 0$ tal que $D - {v}$ es acíclico. 
@@ -68,7 +68,7 @@ Por el contrarreciproco del inciso $A$, sabemos que vale que:
 Con esto vemos que tenemos el $v$ que queriamos. Cumple $d_{out}(v) = 0$ por un lado.
 Si le sacamos a $D$ este vertice $v$ nos queda otro digrafo $D'$ que sigue siendo aciclico, porque si ya lo era $D$, al sacar un vertice lo sigue siendo tambien.
 
-### $\impliedby$
+### $\impliedby$)
 Ahora queremos probar que:
 > $D$ es trivial, o $D$ tiene un vértice con $d_{out}(v) = 0$ tal que $D - {v}$ es acíclico $\implies$ $D$ es aciclico
 
