@@ -34,17 +34,14 @@ $n(n − 1)/2 < |E(G)|$
 
 Si restamos $n-1$ que son todas las aristas que podriamos haber sacado tenemos:
 
-$
-n(n − 1)/2 - (n-1) < |E(G)| - (n-1)
+$n(n − 1)/2 - (n-1) < |E(G)| - (n-1)
 \iff (n(n − 1) - 2(n-1))/2 < |E(G')|
-\iff (n^2-3n+2)/2 < |E(G')|
-$
+\iff (n^2-3n+2)/2 < |E(G')|$
 
 Para aplicar HI sobre $G'$ que tiene $n$ vertices necesitabamos justamente que valiera:
 
 $(n − 1)(n − 2)/2 < |E(G')|
-\iff (n^2-3n+2)/2 < |E(G')|
-$
+\iff (n^2-3n+2)/2 < |E(G')|$
 
 Que es justamente lo que nos quedo. Por lo tanto, por HI vale que G' es conexo. 
 
@@ -61,40 +58,30 @@ Cada uno tiene $i$ y $n - i$ respectivamente. A lo sumo cada uno puede tener est
 
 Si sumamos estos 2 para ver la maxima cantidad de aristas nos queda:
 
-$
-(i^2-i+n^2-ni-n-in+i^2+i)/2
-=(2i^2+n^2-2ni-n)/2
-$
+$(i^2-i+n^2-ni-n-in+i^2+i)/2
+=(2i^2+n^2-2ni-n)/2$
 
 Derivo para analizar el valor de i donde llega al maximo:
 
-$
-(4i-2n)/2
-=2i-n
-$
+$(4i-2n)/2
+=2i-n$
 
 Igualo a 0 para ver cuando alcanza el maximo la funcion:
 
-$
-2i-n = 0
+$2i-n = 0
 \iff 2i = n
-\iff i = n/2
-$
+\iff i = n/2$
 
 Reemplazo el i en la funcion original:
 
-$
-(n^2/2+n^2-n^2-n)/2
-=(n^2/2-n)/2
-$
+$(n^2/2+n^2-n^2-n)/2
+=(n^2/2-n)/2$
 
 Ahora quiero ver que esta cantidad de aristas maxima es menor a la cota de aristas que tenia al principio. Si muestro que esto es asi, llegamos a un absurdo por suponer que era disconexo el grafo:
 
-$
-(n^2/2-n)/2 < (n-1)(n-2)/2 
+$(n^2/2-n)/2 < (n-1)(n-2)/2 
 \iff(n^2/2-n)/2 < (n^2-3n+2)/2
-\iff 0 < n^2/2-2n+2
-$
+\iff 0 < n^2/2-2n+2$
 
 Como esta funcion es creciente positiva a partir de $n = -2$, y a partir de $n = 1$ es mayor estricto a 0, podemos decir que se cumple lo que queriamos.
 Por lo tanto llegamos al absurdo y G es conexo.
