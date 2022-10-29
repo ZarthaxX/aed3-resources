@@ -1,0 +1,3 @@
+- Podemos correr floyd warshall $O(n^3)$
+- Luego simplemente por cada arista evaluamos todo para de vertices $s$ y $t$ y vemos si es $st-eficiente$ para ese par. $O(m*n^2)$
+  - Nos quedamos con la arista que sea la mayor cantidad de veces $st-eficiente$

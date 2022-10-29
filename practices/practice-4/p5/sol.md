@@ -7,7 +7,7 @@ Nos armamos el grafo $P$ tal que:
 Por construccion, $P$ tiene todos los caminos minimos de $s$ a $t$, ya que tiene todas las aristas que forman parte de algun camino minimo.
 Ahora, podemos encontrar las aristas puentes de este grafo $P$ y esas van a ser las criticas de $G$. Veamos que esto vale en este grafo como un si solo si
 
-# $\implies$ 
+# $\implies$)
 Si $(v,w)$ es puente en $P$, entonces no existe un camino minimo que llegue de $s$ a $t$ al sacarla. Seguro me aumenta el costo (o desconecta el grafo original), entonces es critica en $G$.
 
 # $\impliedby$)

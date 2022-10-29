@@ -1,0 +1,5 @@
+- Podemos correr floyd warshall $O(n^3)$
+- Luego por cada par de vertices $v,w \in D$ ($O(n^2)$), lo que hacemos es: ($O(n^3)$)
+  - Recorrer todos los vertices $k$ que no son $v$ y $w$ y chequeamos si se cumple $d(v,w) = d(v,k) + d(k,w)$ ($O(n)$)
+  - Si esto se cumple, $k$ forma parte de algun camino minimo de $v$ a $w$, y lo podemos contar como dentro de $I(v,w)$
+- Si terminamos incorporando a todos los vertices mediante este procedimiento, sabemos que es geodesico $D$.
